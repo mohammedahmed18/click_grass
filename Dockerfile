@@ -21,6 +21,11 @@ RUN apt-get update && apt-get install -y python3-django libpq-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+# tensorflow
+RUN pip install tensorflow \
+tensorflow-estimator \
+tensorflow-intel \
+tensorflow-io-gcs-filesystem
 
 # Clean up cache file - Service tech@appsmith.comlayer
 RUN rm -rf \
