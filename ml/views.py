@@ -9,12 +9,13 @@ from PIL import Image
 import os
 from rest_framework import status
 
+modelPath = os.path.join(os.getcwd(), "\models\egrot.h5")
 
 
 class PredictImage(APIView):
     def post(self, request, format=None):
         # Load the trained model
-        model = load_model(r'F:\full-stack-python\graduation\graduation_project\src/model(1).h5')
+        model = load_model(modelPath)
 
         # Get the image data from the request
         img_data = request.FILES['image']
@@ -39,7 +40,7 @@ class PredictImage(APIView):
 
 @api_view(['POST'])
 def predict(request):
-    model = load_model(r'F:\full-stack-python\graduation\graduation_project\src\ml\models\egrot.h5')
+    model = load_model(modelPath)
     image_file = request.FILES['image']
     image = Image.open(image_file).convert('RGB')
     image = image.resize((224, 224))
