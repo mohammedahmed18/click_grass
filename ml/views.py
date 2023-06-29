@@ -103,7 +103,7 @@ from keras.applications.imagenet_utils import preprocess_input
 from PIL import Image
 
 
-model = load_model(r'F:\full-stack-python\graduation\graduation_project\src\ml\models\dataset.h5')
+model = load_model(modelPath)
 
 class FruitClassificationAPI(APIView):
     def post(self, request):
