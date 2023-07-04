@@ -9,7 +9,7 @@ from PIL import Image
 import os
 from rest_framework import status
 
-modelPath = os.path.join(os.getcwd(), "models\egrot.h5")
+modelPath = os.path.join(os.getcwd(), "models", "egrot.h5")
 
 
 class PredictImage(APIView):
