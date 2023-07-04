@@ -54,7 +54,7 @@ RUN python3 manage.py migrate
 #         --noinput \
 #         --username "superadmin" \
 #         --email "admin@admin.com"
-RUN echo "from app1.models import User; User.objects.create_superuser('superadmin', 'admin@example.com', 'pass')" | python3 manage.py shell
+# RUN echo "from app1.models import User; User.objects.create_superuser('superadmin', 'admin@example.com', 'pass')" | python3 manage.py shell
 
 EXPOSE 8000
 
